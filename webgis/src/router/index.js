@@ -4,7 +4,7 @@ import HelloWorld from '@/components/test/HelloWorld'
 import Mapbox from '@/components/map/mapbox/Mapbox'
 import Leaflet from '@/components/map/leaflet/Leaflet'
 import Cesium from '@/components/map/cesium/Cesium'
-import Map from '@/components/Map'
+import olMap from '@/components/map/openlayer/OlMap'
 
 
 Vue.use(Router)
@@ -14,7 +14,12 @@ export default new Router({
     {
       path: '/',
       name: 'Map',
-      component: Map
+      component: Mapbox
+    },
+    {
+      path: '/olMap',
+      name: 'olMap',
+      component: olMap
     },
     {
       path: '/test',
@@ -35,6 +40,10 @@ export default new Router({
       path: '/cesium',
       name: 'cesium',
       component: Cesium
+    },
+    {
+      path: '*',
+      redirect: '/mapbox'
     }
   ]
 })

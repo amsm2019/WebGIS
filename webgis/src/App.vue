@@ -21,10 +21,10 @@
             </template>
             <el-menu-item-group>
               <span slot="title">基础地图</span>
-              <el-menu-item @click="toMap" index="1-1">openlayer</el-menu-item>
-              <el-menu-item @click="toMapbox" index="1-2">mapbox</el-menu-item>
+              <el-menu-item @click="toMapbox" index="1-1">mapbox</el-menu-item>
+              <el-menu-item @click="toolMap" index="1-2">openlayer</el-menu-item>
               <el-menu-item @click="toLeaflet" index="1-3">leaflet</el-menu-item>
-              <el-menu-item @click="toCesium" index="1-3">cesium</el-menu-item>
+              <el-menu-item @click="toCesium" index="1-4">cesium</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- <el-menu-item @click="toMap" index="1"> -->
@@ -65,8 +65,8 @@ export default {
     };
   },
   methods: {
-    toMap() {
-      this.$router.push("/");
+    toolMap() {
+      this.$router.push("/olMap");
     },
     toMapbox() {
       this.$router.push("/mapbox");

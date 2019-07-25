@@ -64,7 +64,7 @@ export default {
         target: "map",
         loadTilesWhileAnimating: true, //允许在动画中加载瓦片
         // pixelRatio: 1,
-        layers: [ggSatLayer,labelLayer],
+        layers: [ggSatLayer],
         view: defaultView
       });
     }

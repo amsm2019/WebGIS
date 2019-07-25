@@ -27,10 +27,10 @@ export default {
       Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MzAyNzUyYi0zY2QxLTQxZDItODRkOS1hNTA3MDU3ZTBiMDUiLCJpZCI6MjU0MSwiaWF0IjoxNTMzNjI1MTYwfQ.oHn1SUWJa12esu7XUUtEoc1BbEbuZpRocLetw6M6_AA';
       var viewer = new Cesium.Viewer('cesiumContainer',{
           imageryProvider :  googleSatLayer,
-          // homeButton: false, //是否显示home控件
+          homeButton: false, //是否显示home控件
           animation: false,  //是否显示动画控件
-          // baseLayerPicker : false,//是否显示图层选择控件
-          // geocoder: true, //是否显示地名查找控件
+          baseLayerPicker : false,//是否显示图层选择控件
+          geocoder: false, //是否显示地名查找控件
           timeline: false, //是否显示时间线控件
           // sceneModePicker: false,//是否显示投影方式控件
           navigationHelpButton: false,//是否显示帮助信息控件
@@ -44,7 +44,9 @@ export default {
           pitch : Cesium.Math.toRadians(-90),  
           roll : Cesium.Math.toRadians(0)                            
         }   
-      })
+      });
+      viewer._cesiumWidget._creditContainer.style.display="none"; //隐藏版权信息
+      viewer.resolutionScale = window.devicePixelRatio;
       // viewer._cesiumWidget._creditContainer.style.display="none";
       // viewer.scene.skyBox.show = false;
       // viewer.scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
